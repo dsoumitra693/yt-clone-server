@@ -1,12 +1,14 @@
 //importing the modules
 const express = require("express");
 const app = express();
+require("dotenv").config()
 // const apiHandler = require("./apiHandler")
-const PORT = 5000;
+const PORT = process.env.PORT;
 const cors = require('cors');
 const axios = require("axios");
 
-const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
+
+const BASE_URL = process.env.BASE_URL
 
 
 const options = {
@@ -14,8 +16,8 @@ const options = {
         maxResults: '20'
     },
     headers: {
-        'X-RapidAPI-Key': '8f7de1e440msh145f6615b4a38b6p107f55jsn347a8da283e9',
-        'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
+        'X-RapidAPI-Key': process.env.XRapidAPIKey,
+        'X-RapidAPI-Host': process.env.XRapidAPIHost
     }
 };
 
@@ -27,7 +29,7 @@ const apiHandler = async (url) => {
 
 // using the cors
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: ['http://127.0.0.1:3000', "http://localhost:3000"],
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
@@ -36,7 +38,6 @@ app.use(cors(corsOptions));
 // feed 
 app.get("/:selectedCatagory", async (req, res) => {
     const { selectedCatagory } = req.params;
-    console.log(selectedCatagory)
     try {
         const response = await apiHandler(`search?part=snippet&q=${selectedCatagory}`)
 
@@ -87,8 +88,11 @@ app.get("/video/:videoId", async (req, res) => {
         res.status(200).send(response)
     } catch (err) {
         res.status(500).send(err)
+
     }
 });
+
+
 //chennel details
 app.get("/channels/:channelId", async (req, res) => {
     const { channelId } = req.params;
@@ -101,7 +105,9 @@ app.get("/channels/:channelId", async (req, res) => {
     }
 });
 
+app.get("/media/video",(req, res)=>{
+    res.sendFile(__dirname + "/media/video.mp4")
+})
+
 //running the app on PORT number
-app.listen(PORT, () => {
-    console.log("Server is running");
-});
+app.listen(PORT);

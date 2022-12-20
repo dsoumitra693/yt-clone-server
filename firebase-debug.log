@@ -1,0 +1,25 @@
+[debug] [2022-12-20T09:43:14.392Z] ----------------------------------------------------------------------
+[debug] [2022-12-20T09:43:14.396Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\PC-13\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-20T09:43:14.397Z] CLI Version:   11.19.0
+[debug] [2022-12-20T09:43:14.397Z] Platform:      win32
+[debug] [2022-12-20T09:43:14.397Z] Node Version:  v18.12.1
+[debug] [2022-12-20T09:43:14.399Z] Time:          Tue Dec 20 2022 15:13:14 GMT+0530 (India Standard Time)
+[debug] [2022-12-20T09:43:14.400Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-20T09:43:14.497Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-20T09:43:14.497Z] > authorizing via signed-in user (dsoumitra693@gmail.com)
+[debug] [2022-12-20T09:43:14.498Z] [iam] checking project yt-server-clone for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-20T09:43:14.501Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/yt-server-clone:testIamPermissions [none]
+[debug] [2022-12-20T09:43:14.501Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/yt-server-clone:testIamPermissions x-goog-quota-user=projects/yt-server-clone
+[debug] [2022-12-20T09:43:14.501Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yt-server-clone:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-20T09:43:16.922Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/yt-server-clone:testIamPermissions 200
+[debug] [2022-12-20T09:43:16.922Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yt-server-clone:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-20T09:43:16.924Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/yt-server-clone [none]
+[debug] [2022-12-20T09:43:23.572Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/yt-server-clone 200
+[debug] [2022-12-20T09:43:23.572Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/yt-server-clone {"projectId":"yt-server-clone","projectNumber":"956577861215","displayName":"yt-server-clone","name":"projects/yt-server-clone","resources":{"hostingSite":"yt-server-clone"},"state":"ACTIVE","etag":"1_a7f71e84-9ef6-495e-b293-f0c694207734"}
+[debug] [2022-12-20T09:43:53.344Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\PC-13\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+[error] 
+[error] Error: An unexpected error has occurred.
