@@ -9,6 +9,7 @@ const axios = require("axios");
 
 
 const BASE_URL = process.env.BASE_URL
+const ORIGIN = ['http://127.0.0.1:3000', "http://localhost:3000", process.env.ORIGIN]
 
 
 const options = {
@@ -29,7 +30,7 @@ const apiHandler = async (url) => {
 
 // using the cors
 const corsOptions = {
-    origin: ['http://127.0.0.1:3000', "http://localhost:3000", "https://0.0.0.0"],
+    origin: ORIGIN,
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
