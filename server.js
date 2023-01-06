@@ -29,7 +29,7 @@ const apiHandler = async (url) => {
 
 // using the cors
 const corsOptions = {
-    origin: ['http://127.0.0.1:3000', "http://localhost:3000"],
+    origin: ['http://127.0.0.1:3000', "http://localhost:3000", "https://0.0.0.0"],
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
