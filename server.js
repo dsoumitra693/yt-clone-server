@@ -30,7 +30,7 @@ const apiHandler = async (url) => {
 
 // using the cors
 const corsOptions = {
-    origin: ORIGIN,
+    origin: "https://yt-react-clone.vercel.app/",
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
