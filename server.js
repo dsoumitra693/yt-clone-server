@@ -9,7 +9,7 @@ const axios = require("axios");
 
 
 const BASE_URL = process.env.BASE_URL
-const ORIGIN = process.env.ORIGIN || ['http://127.0.0.1:3000', "http://localhost:3000", ]
+const ORIGIN = [process.env.ORIGIN , 'http://127.0.0.1:3000', "http://localhost:3000", ]
 
 
 const options = {
