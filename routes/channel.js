@@ -1,19 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const apiHandler = require("./apiHandler")
-
-
-//channel related video 
-router.get("/video/:channelId", async (req, res) => {
-    const { channelId } = req.params;
-    try {
-        const response = await apiHandler(`search?channelId=${channelId}&part=snippet&order=date`)
-
-        res.status(200).send(response)
-    } catch (err) {
-        res.status(500).send(err)
-    }
-});
+const apiHandler = require("../apiHandler")
 
 //chennel details
 router.get("/:channelId", async (req, res) => {
@@ -27,4 +14,4 @@ router.get("/:channelId", async (req, res) => {
     }
 });
 
-export default router
+module.exports = router

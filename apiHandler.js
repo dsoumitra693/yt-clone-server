@@ -17,5 +17,4 @@ const apiHandler = async (url) => {
     return data;
 
 }
-
-export default apiHandler
+module.exports = { apiHandler }

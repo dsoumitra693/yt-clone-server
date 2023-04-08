@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const apiHandler = require("./apiHandler")
+const { apiHandler } = require("../apiHandler")
 
 
 //Feed
@@ -26,4 +26,4 @@ router.get("/search/:searchTerm", async (req, res) => {
     }
 });
 
-export default router
+module.exports = router
